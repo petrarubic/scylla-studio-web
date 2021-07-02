@@ -1,5 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
 /* purgecss start ignore */
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 /* purgecss end ignore */
 @import "tailwindcss/utilities";
+
+.navbar-link:after {
+    content: "";
+    display: block;
+    width: 0%;
+    border-bottom: 1px solid white;
+    transition: .5s;
+}
+
+.navbar-link:hover:after {
+    width: 100%;
+}
