@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
 
 /* purgecss start ignore */
 @import "tailwindcss/base";
@@ -10,7 +10,7 @@
     content: "";
     display: block;
     width: 0%;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid rgb(47, 128, 221);
     transition: .5s;
 }
 

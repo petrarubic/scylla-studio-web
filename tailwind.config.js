@@ -6,7 +6,8 @@ module.exports = {
   variants: {
     extend: {
       textColor: ['visited'],
-      scale: ['group-hover']
+      scale: ['group-hover'],
+      fontWeight: ['hover', 'focus']
     }
   },
   theme: {

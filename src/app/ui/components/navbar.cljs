@@ -8,7 +8,7 @@
             [keechma.next.helix.lib :refer [defnc]]))
 
 (defnc NavbarLink [props]
-  (d/a {:class "navbar-link px-5 py-2"
+  (d/a {:class "navbar-link px-5 py-2 font-bold"
         :href (:url props)}
        (:text props)))
 
