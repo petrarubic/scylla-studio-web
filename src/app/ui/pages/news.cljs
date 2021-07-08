@@ -11,6 +11,7 @@
 (defnc NewsRenderer [_]
   ($ NewsWrapper
      ($ Navbar)
-     "Stay in touch: development blog is coming soon..."))
+     (d/div {:class "bg-black text-white h-full"}
+            (d/h1 {:class "font-bold text-center py-20 text-2xl"} "Development blog is coming soon..."))))
 
 (def News (with-keechma NewsRenderer))
