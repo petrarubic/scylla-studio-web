@@ -10,10 +10,60 @@
     content: "";
     display: block;
     width: 0%;
-    border-bottom: 1px solid #1E40AF;
+    border-bottom: 1px solid #1e3a8a;
     transition: .5s;
 }
 
 .navbar-link:hover:after {
     width: 100%;
 }
+
+.dot-flashing {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: gray;
+    color: gray;
+    animation: dotFlashing 1s infinite linear alternate;
+    animation-delay: .5s;
+  }
+  
+  .dot-flashing::before, .dot-flashing::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+  }
+  
+  .dot-flashing::before {
+    left: -15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: gray;
+    color: gray;
+    animation: dotFlashing 1s infinite alternate;
+    animation-delay: 0s;
+  }
+  
+  .dot-flashing::after {
+    left: 15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: gray;
+    color: gray;
+    animation: dotFlashing 1s infinite alternate;
+    animation-delay: 1s;
+  }
+  
+  @keyframes dotFlashing {
+    0% {
+      background-color: gray;
+    }
+    50%,
+    100% {
+      background-color: white;
+    }
+  }
