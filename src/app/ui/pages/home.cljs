@@ -7,7 +7,7 @@
             [keechma.next.helix.classified :refer [defclassified]]
             [app.ui.components.navbar :refer [Navbar]]))
 
-(defclassified HomeWrapper :div "h-screen w-screen font-montserrat")
+(defclassified HomeWrapper :div "h-screen w-screen font-montserrat cursor-default")
 (defclassified HomeTitle :h1 "uppercase font-light text-center text-3xl")
 (defclassified HomeLink :a "hover:font-bold hover:text-black w-full cursor-pointer md:w-1/2 py-2 rounded-md text-center bg-gradient-to-r from-red-700 to-red-900")
 
