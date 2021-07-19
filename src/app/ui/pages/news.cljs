@@ -6,13 +6,15 @@
             [keechma.next.helix.classified :refer [defclassified]]
             [app.ui.components.navbar :refer [Navbar]]))
 
-(defclassified NewsWrapper :div "h-screen w-screen font-montserrat")
+(defclassified NewsWrapper :div "h-screen w-screen font-montserrat cursor-default")
+(defclassified NewsTitle :h1 "font-bold pt-20 pb-5 text-2xl")
+(defclassified NewsAnimatedDots :div "m-auto justify-center dot-flashing")
 
 (defnc NewsRenderer [_]
   ($ NewsWrapper
      ($ Navbar)
      (d/div {:class "bg-black text-white h-full text-center"}
-            (d/h1 {:class "font-bold pt-20 pb-5 text-2xl"} "Development blog is coming soon")
-            (d/div {:class "m-auto justify-center dot-flashing"}))))
+            ($ NewsTitle "Development blog is coming soon")
+            ($ NewsAnimatedDots))))
 
 (def News (with-keechma NewsRenderer))

@@ -48,6 +48,6 @@
                                (d/img {:src "../images/scylla-logo.jpeg" :class "w-64 h-64"}))
                           (d/p {:class "font-bold mt-10 text-center text-xs"} "Made with:"
                                (d/a {:href "https://github.com/keechma" :target "_blank"}
-                                    (d/img {:src "../images/keechma-logo.png" :class "w-32 h-5"}))))))))
+                                    (d/img {:src "../images/keechma-logo.png" :class "mt-2 w-32 h-5"}))))))))
 
 (def Home (with-keechma HomeRenderer))
