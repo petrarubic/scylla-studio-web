@@ -9,7 +9,9 @@
 
 (defclassified TeamWrapper :div "h-screen w-screen font-montserrat bg-black cursor-default")
 (defclassified TeamTitle :h1 "uppercase font-light text-center text-3xl")
-(defclassified TeamGrid :div "grid md:grid-cols-2 grid-cols-1 grid-rows-4 md:grid-rows-2 grid-flow-col md:grid-flow-row gap-20 my-20")
+(defclassified TeamSubtitle :h1 "uppercase font-light text-left text-2xl")
+(defclassified TeamCoreGrid :div "grid md:grid-cols-2 grid-cols-1 grid-rows-4 md:grid-rows-2 grid-flow-col md:grid-flow-row gap-20 mb-20 mt-10")
+(defclassified TeamAssociateGrid :div "grid md:grid-cols-3 grid-cols-1 grid-rows-3 md:grid-rows-1 grid-flow-col md:grid-flow-row gap-20 mb-20 mt-10")
 
 (defnc TeamMemberCard [{:keys [image first_name last_name position]}]
   (d/div {:class "bg-white shadow-lg rounded-lg relative"}
@@ -43,11 +45,18 @@
                                (d/img {:src "../images/scylla-logo.jpeg" :class "w-96 h-96"}))
                           (d/p {:class "text-lg text-wrap text-center mx-80 mb-40"} "Small indie studio team in Croatia working together since 2019 on puzzle adventure video games."))
                    ($ TeamTitle "Meet the Team")
-                   ($ TeamGrid
-                      ($ TeamMemberCard {:image placeholder_image :first_name "Marko" :last_name "Pavliško" :position "Programmer"})
-                      ($ TeamMemberCard {:image placeholder_image :first_name "Matija" :last_name "Vigato" :position "Game Designer"})
-                      ($ TeamMemberCard {:image placeholder_image :first_name "Marko" :last_name "Dijan" :position "3D Artist"})
-                      ($ TeamMemberCard {:image placeholder_image :first_name "Petra" :last_name "Rubić" :position "UI Programmer"}))
+                   (d/div {:class "mt-20"}
+                          ($ TeamSubtitle "Core Team Members")
+                          ($ TeamCoreGrid
+                             ($ TeamMemberCard {:image placeholder_image :first_name "Marko" :last_name "Pavliško" :position "Programmer"})
+                             ($ TeamMemberCard {:image placeholder_image :first_name "Matija" :last_name "Vigato" :position "Game Designer"})
+                             ($ TeamMemberCard {:image placeholder_image :first_name "Marko" :last_name "Dijan" :position "3D Artist"})
+                             ($ TeamMemberCard {:image placeholder_image :first_name "Petra" :last_name "Rubić" :position "UI Programmer"}))
+                          ($ TeamSubtitle "Associate Team Members")
+                          ($ TeamAssociateGrid
+                             ($ TeamMemberCard {:image placeholder_image :first_name "Mehmet" :last_name "Demirci" :position "Level Designer"})
+                             ($ TeamMemberCard {:image placeholder_image :first_name "Lucian" :last_name "Ludaš" :position "Programmer"})
+                             ($ TeamMemberCard {:image placeholder_image :first_name "Igor" :last_name "Margan" :position "Mentor & Game Designer"})))
                    (d/div {:class "m-auto pt-20"}
                           ($ TeamTitle "Join the Community")
                           (d/div {:class "flex flex-col md:flex-row mt-14 space-y-10 md:space-y-0"}
@@ -60,6 +69,9 @@
                                                     :description "Follow us on Instagram and stay in touch for latest updates on Scylla Studio and ReMind!"
                                                     :link "https://www.instagram.com/scylla.studio"
                                                     :icon "../images/follow-white-outline.png"
-                                                    :icon_hover "../images/follow-blue-outline.png"})))))))
+                                                    :icon_hover "../images/follow-blue-outline.png"})))
+                   (d/div {:class "pt-40 text-center"}
+                          ($ TeamTitle {:class "mb-4"} "Stay Connected")
+                          (d/a {:href "mailto:studioscylla@gmail.com" :class "text-lg font-semibold"} "studioscylla@gmail.com"))))))
 
 (def Team (with-keechma TeamRenderer))
