@@ -40,8 +40,8 @@
                                               that needs to be fixed. While inside the brain, a robot named Yµ follows your progress and guides you across multiple puzzles
                                               and riddles every level contains."))))
                    (d/div {:class "flex flex-row justify-center space-x-4 mt-4"}
-                          ($ HomeLink "Media")
-                          ($ HomeLink "ReMind FAQ")))
+                          ($ HomeLink {:href (router/get-url _ :router {:page "media"})} "Media")
+                          ($ HomeLink {:href (router/get-url _ :router {:page "faq"})} "ReMind FAQ")))
             (d/div {:class "py-10 mx-80"}
                    (d/div {:class "flex flex-col place-items-center m-auto"}
                           (d/a {:href (router/get-url _ :router {:page "team"}) :class "pb-10 transform transition ease-in-out duration-500 hover:scale-125"}
