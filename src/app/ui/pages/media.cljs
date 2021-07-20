@@ -7,7 +7,7 @@
             [app.ui.components.navbar :refer [Navbar]]))
 
 (defclassified MediaWrapper :div "h-screen w-screen font-montserrat cursor-default")
-(defclassified MediaTitle :h1 "font-bold pt-20 pb-5 text-2xl")
+(defclassified MediaTitle :h1 "font-bold pt-20 pb-5 mx-5 md:mx-0 text-2xl")
 (defclassified MediaAnimatedDots :div "m-auto justify-center dot-flashing-red")
 
 (defnc MediaRenderer [_]

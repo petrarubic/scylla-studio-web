@@ -7,7 +7,7 @@
             [app.ui.components.navbar :refer [Navbar]]))
 
 (defclassified FAQWrapper :div "h-screen w-screen font-montserrat cursor-default")
-(defclassified FAQTitle :h1 "font-bold pt-20 pb-5 text-2xl")
+(defclassified FAQTitle :h1 "font-bold pt-20 pb-5 mx-5 md:mx-0 text-2xl")
 (defclassified FAQAnimatedDots :div "m-auto justify-center dot-flashing-red")
 
 (defnc FAQRenderer [_]
