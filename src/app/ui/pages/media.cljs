@@ -8,11 +8,13 @@
 
 (defclassified MediaWrapper :div "h-screen w-screen font-montserrat cursor-default")
 (defclassified MediaTitle :h1 "font-bold pt-20 pb-5 text-2xl")
+(defclassified MediaAnimatedDots :div "m-auto justify-center dot-flashing-red")
 
 (defnc MediaRenderer [_]
   ($ MediaWrapper
      ($ Navbar)
      (d/div {:class "bg-black text-white h-full text-center"}
-            ($ MediaTitle "ReMind media coming soon..."))))
+            ($ MediaTitle "ReMind media is coming soon")
+            ($ MediaAnimatedDots))))
 
 (def Media (with-keechma MediaRenderer))

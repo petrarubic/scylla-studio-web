@@ -8,7 +8,7 @@
 
 (defclassified NewsWrapper :div "h-screen w-screen font-montserrat cursor-default")
 (defclassified NewsTitle :h1 "font-bold pt-20 pb-5 text-2xl")
-(defclassified NewsAnimatedDots :div "m-auto justify-center dot-flashing")
+(defclassified NewsAnimatedDots :div "m-auto justify-center dot-flashing-blue")
 
 (defnc NewsRenderer [_]
   ($ NewsWrapper
