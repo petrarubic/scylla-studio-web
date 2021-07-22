@@ -10,19 +10,19 @@
 (defclassified TeamWrapper :div "h-screen w-screen font-montserrat bg-black cursor-default")
 (defclassified TeamTitle :h1 "uppercase font-light text-center text-3xl")
 (defclassified TeamSubtitle :h1 "uppercase font-light text-center lg:text-left text-2xl")
-(defclassified TeamCoreGrid :div "grid xl:grid-cols-2 grid-cols-1 grid-rows-4 md:grid-rows-2 grid-flow-col mx-10 md:mx-20 lg:mx-0 md:grid-flow-row gap-20 mb-20 mt-10")
-(defclassified TeamAssociateGrid :div "grid xl:grid-cols-3 grid-cols-1 grid-rows-3 md:grid-rows-1 grid-flow-col mx-10 md:mx-20 lg:mx-0 md:grid-flow-row gap-20 mb-20 mt-10")
+(defclassified TeamCoreGrid :div "grid xl:grid-cols-2 grid-cols-1 grid-rows-4 md:grid-rows-2 grid-flow-col mx-10 md:mx-20 lg:mx-0 md:grid-flow-row gap-5 md:gap-20 mb-20 mt-10")
+(defclassified TeamAssociateGrid :div "grid xl:grid-cols-3 grid-cols-1 grid-rows-3 md:grid-rows-1 grid-flow-col mx-10 md:mx-20 lg:mx-0 md:grid-flow-row gap-5 mb-20 mt-10")
 
 (defnc TeamCoreMemberCard [{:keys [image first_name last_name position]}]
-  (d/div {:class "bg-white shadow-lg rounded-lg relative"}
-         (d/div {:class "bg-gradient-to-t from-blue-900 z-10 absolute w-full h-full rounded-lg"})
+  (d/div {:class "bg-white shadow-lg rounded-lg relative h-48 md:h-64"}
+         (d/div {:class "bg-gradient-to-t from-blue-900 z-10 absolute w-full h-full md:h-64 rounded-lg"})
          (d/div {:class "w-full h-full z-20 absolute text-white"}
-                (d/div {:class "bottom-5 left-5 md:bottom-10 md:left-10 absolute font-bold"}
+                (d/div {:class "bottom-5 left-5 md:bottom-6 md:left-6 absolute font-bold"}
                        (d/h1 {:class "text-xl 2xl:text-3xl"} first_name)
                        (d/h2 {:class "text-md 2xl:text-xl pb-4"} last_name)
                        (d/hr {:class "w-20 border-blue-300 border-2"})
                        (d/p {:class "text-sm 2xl:text-md text-blue-300 uppercase pt-4"} position)))
-         (d/img {:src image :class "w-full rounded-lg block"})))
+         (d/img {:src image :class "h-full w-full rounded-lg block"})))
 
 (defnc TeamAssociateMemberCard [{:keys [image first_name last_name position]}]
   (d/div {:class "bg-white shadow-lg rounded-lg relative"}
@@ -44,8 +44,6 @@
               (d/img {:src icon :class "w-10 h-10 absolute transition hover:opacity-20 transition-opacity duration-700 ease-out"})
               (d/img {:src icon_hover :class "w-10 h-10"}))))
 
-(def placeholder_image "https://via.placeholder.com/400x400.png?text=Placeholder+image")
-
 (defnc TeamRenderer [_]
   ($ TeamWrapper
      ($ Navbar)
@@ -59,15 +57,15 @@
                    (d/div {:class "mt-20"}
                           ($ TeamSubtitle "Core Team Members")
                           ($ TeamCoreGrid
-                             ($ TeamCoreMemberCard {:image placeholder_image :first_name "Marko" :last_name "Pavliško" :position "Programmer"})
-                             ($ TeamCoreMemberCard {:image placeholder_image :first_name "Matija" :last_name "Vigato" :position "Game Designer"})
-                             ($ TeamCoreMemberCard {:image placeholder_image :first_name "Marko" :last_name "Dijan" :position "3D Artist"})
-                             ($ TeamCoreMemberCard {:image placeholder_image :first_name "Petra" :last_name "Rubić" :position "UI Programmer"}))
+                             ($ TeamCoreMemberCard {:image "../images/profile/marko_pavlisko_profile.jpg" :first_name "Marko" :last_name "Pavliško" :position "Project Manager & Programmer"})
+                             ($ TeamCoreMemberCard {:image "../images/profile/matija_vigato_profile.jpg" :first_name "Matija" :last_name "Vigato" :position "Game Designer"})
+                             ($ TeamCoreMemberCard {:image "../images/profile/marko_dijan_profile.jpg" :first_name "Marko" :last_name "Dijan" :position "3D Artist"})
+                             ($ TeamCoreMemberCard {:image "../images/profile/petra_rubic_profile.jpg" :first_name "Petra" :last_name "Rubić" :position "UI Designer & Programmer"}))
                           ($ TeamSubtitle "Associate Team Members")
                           ($ TeamAssociateGrid
-                             ($ TeamAssociateMemberCard {:image placeholder_image :first_name "Mehmet" :last_name "Demirci" :position "Level Designer"})
-                             ($ TeamAssociateMemberCard {:image placeholder_image :first_name "Lucian" :last_name "Ludaš" :position "Programmer"})
-                             ($ TeamAssociateMemberCard {:image placeholder_image :first_name "Igor" :last_name "Margan" :position "Mentor & Game Designer"})))
+                             ($ TeamAssociateMemberCard {:image "../images/profile/mehmet_demirci_profile.jpg" :first_name "Mehmet" :last_name "Demirci" :position "Level Designer"})
+                             ($ TeamAssociateMemberCard {:image "../images/profile/lucian_ludas_profile.jpg" :first_name "Lucian" :last_name "Ludaš" :position "Programmer"})
+                             ($ TeamAssociateMemberCard {:image "../images/profile/igor_margan_profile.jpg" :first_name "Igor" :last_name "Margan" :position "Mentor & Game Designer"})))
                    (d/div {:class "m-auto pt-20"}
                           ($ TeamTitle "Join the Community")
                           (d/div {:class "flex flex-col md:flex-row mt-14 mx-10 md:mx-0 md:space-x-10 space-y-10 md:space-y-0"}

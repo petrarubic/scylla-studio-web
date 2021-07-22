@@ -119,8 +119,8 @@
   }
 
   .cursor {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     border: 1px solid white;
     border-radius: 50%;
     position: absolute;
@@ -132,12 +132,14 @@
 
 .cursor::after {
     content: "";
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     position: absolute;
     border: 8px solid gray;
     border-radius: 50%;
     opacity: .5;
+    right: 15px;
+    top: -12px;
     animation: cursorAnim2 .5s infinite alternate;
 }
 
@@ -174,5 +176,5 @@
 
 .expand {
     animation: cursorAnim3 .5s forwards;
-    border: 1px solid white;
+    border: 1px solid #1e3a8a;
 }
