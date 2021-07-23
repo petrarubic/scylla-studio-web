@@ -14,7 +14,7 @@
 (defclassified TeamAssociateGrid :div "grid xl:grid-cols-3 grid-cols-1 grid-rows-3 md:grid-rows-1 grid-flow-col mx-10 md:mx-20 lg:mx-0 md:grid-flow-row gap-5 mb-20 mt-10")
 
 (defnc TeamCoreMemberCard [{:keys [image first_name last_name position]}]
-  (d/div {:class "bg-white shadow-lg rounded-lg relative h-48 md:h-64"}
+  (d/div {:class "bg-white shadow-lg rounded-lg relative h-48 md:h-64 group overflow-hidden"}
          (d/div {:class "bg-gradient-to-t from-blue-900 z-10 absolute w-full h-full md:h-64 rounded-lg"})
          (d/div {:class "w-full h-full z-20 absolute text-white"}
                 (d/div {:class "bottom-5 left-5 md:bottom-6 md:left-6 absolute font-bold"}
@@ -22,10 +22,10 @@
                        (d/h2 {:class "text-md 2xl:text-xl pb-4"} last_name)
                        (d/hr {:class "w-20 border-blue-300 border-2"})
                        (d/p {:class "text-sm 2xl:text-md text-blue-300 uppercase pt-4"} position)))
-         (d/img {:src image :class "h-full w-full rounded-lg block"})))
+         (d/img {:src image :class "h-full w-full rounded-lg block transition duration-500 ease-in-out transform group-hover:scale-125"})))
 
 (defnc TeamAssociateMemberCard [{:keys [image first_name last_name position]}]
-  (d/div {:class "bg-white shadow-lg rounded-lg relative"}
+  (d/div {:class "bg-white shadow-lg rounded-lg relative group overflow-hidden"}
          (d/div {:class "bg-gradient-to-t from-blue-900 z-10 absolute w-full h-full rounded-lg"})
          (d/div {:class "w-full h-full z-20 absolute text-white"}
                 (d/div {:class "bottom-5 left-5 md:bottom-10 md:left-10 xl:bottom-4 xl:left-4 absolute font-bold"}
@@ -33,7 +33,7 @@
                        (d/h2 {:class "text-md 2xl:text-lg pb-4"} last_name)
                        (d/hr {:class "w-20 border-blue-300 border-2"})
                        (d/p {:class "text-xs 2xl:text-sm text-blue-300 uppercase pt-4"} position)))
-         (d/img {:src image :class "w-full rounded-lg block"})))
+         (d/img {:src image :class "w-full rounded-lg block transition duration-500 ease-in-out transform group-hover:scale-125"})))
 
 (defnc TeamSocialCard [{:keys [image description link icon icon_hover]}]
   (d/div {:class "p-10 text-center justify-center m-auto border-white rounded-lg border-opacity-10 border-2 w-full md:w-1/2"}
