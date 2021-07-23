@@ -10,7 +10,7 @@
 (defclassified TeamWrapper :div "h-screen w-screen font-montserrat bg-black cursor-default")
 (defclassified TeamTitle :h1 "uppercase font-light text-center text-3xl")
 (defclassified TeamSubtitle :h1 "uppercase font-light text-center lg:text-left text-2xl")
-(defclassified TeamCoreGrid :div "grid xl:grid-cols-2 grid-cols-1 grid-rows-4 md:grid-rows-2 grid-flow-col mx-10 md:mx-20 lg:mx-0 md:grid-flow-row gap-5 md:gap-20 mb-20 mt-10")
+(defclassified TeamCoreGrid :div "grid 2xl:grid-cols-3 md:grid-cols-2 grid-cols-1 grid-rows-4 md:grid-rows-2 grid-flow-col mx-10 md:mx-20 lg:mx-0 md:grid-flow-row gap-5 md:gap-20 mb-20 mt-10")
 (defclassified TeamAssociateGrid :div "grid xl:grid-cols-3 grid-cols-1 grid-rows-3 md:grid-rows-1 grid-flow-col mx-10 md:mx-20 lg:mx-0 md:grid-flow-row gap-5 mb-20 mt-10")
 
 (defnc TeamCoreMemberCard [{:keys [image first_name last_name position]}]
